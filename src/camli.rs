@@ -40,6 +40,8 @@ pub enum Any {
     Symlink(file::Common::<file::Symlink>),
     Socket(file::Common::<file::Socket>),
     FIFO(file::Common::<file::FIFO>),
+
+    Inode(file::Inode),
 }
 
 

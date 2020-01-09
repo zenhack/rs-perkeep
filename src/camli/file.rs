@@ -90,6 +90,14 @@ pub enum MixedEncodingPath {
 
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
+pub struct Inode {
+    pub inode_id: usize,
+    pub device_id: usize,
+    pub num_links: usize,
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
 pub enum Any {
     File(File),
     Directory(Directory),
