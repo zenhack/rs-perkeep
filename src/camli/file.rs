@@ -1,4 +1,5 @@
 use crate::blob;
+use super::bytes;
 use serde::{Serialize, Deserialize};
 
 #[derive(Serialize, Deserialize, Debug)]
@@ -58,15 +59,12 @@ impl Shared {
 #[derive(Serialize, Deserialize, Debug)]
 pub struct File {
     #[serde(flatten)]
-    shared: Shared,
+    bytes: bytes::Bytes,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Directory {
-    #[serde(flatten)]
-    shared: Shared,
-
     entries: blob::Ref,
 }
 
