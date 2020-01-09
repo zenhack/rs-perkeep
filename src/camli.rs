@@ -31,6 +31,10 @@ pub enum Any {
     #[serde(rename = "static-set")]
     StaticSet(StaticSet),
 
+    // TODO: ideally we wouldn't flatten these into
+    // Any, but instead use file::Any with one enum variant. To do that
+    // though, I(isd) need to work out how to get serde to do the tagging
+    // right.
     File(file::Common<file::File>),
     Directory(file::Common<file::Directory>),
     Symlink(file::Common::<file::Symlink>),
