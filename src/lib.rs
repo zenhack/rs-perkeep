@@ -1,5 +1,6 @@
 pub mod blob;
 pub mod camli;
+//pub mod search;
 
 #[cfg(test)]
 mod tests {

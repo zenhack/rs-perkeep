@@ -4,6 +4,7 @@ use serde::{Serialize, Deserialize};
 pub mod bytes;
 pub mod file;
 pub mod permanode;
+pub mod claim;
 
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
