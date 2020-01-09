@@ -3,6 +3,7 @@ use serde::{Serialize, Deserialize};
 
 pub mod bytes;
 pub mod file;
+pub mod permanode;
 
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
@@ -26,6 +27,7 @@ impl Common {
 #[serde(rename_all = "camelCase")]
 #[serde(tag = "camliType")]
 pub enum Any {
+    Permanode(permanode::Permanode),
     Bytes(bytes::Bytes),
 
     #[serde(rename = "static-set")]
